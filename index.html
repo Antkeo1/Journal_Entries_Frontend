@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Example</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="ticTacToe.css">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+
+
+    </head>
+    <body>
+      <div class="header">
+        <h1>yourEnTrees.com</h1>
+        <p>Planting seeds in the mind. Grow your EnTrees</p>
+      </div>
+      <div class="dropdown" style='float:left;'>
+        <button class='signIn'>SignIn</button>
+        <div class="dropdown-content" style='left:0;'>
+          <input type='text' name='credentials[username]' placeholder='username'>
+          <input type='password' name='credentials[password]' placeholder="password">
+          <input type="submit" value="Sign In!">
+        </div>
+      </div>
+
+      <div class="dropdown" style='float:left;'>
+        <button class='signOut'>SignOut</button>
+      </div>
+
+      <div class="dropdown" style='float:right;'>
+        <button class='savedJournals'>Saved Entries</button>
+      </div>
+
+
+
+      <div class="dropdown" style='float:left;'>
+        <button class='signUp'>SignUp</button>
+        <div class="dropdown-content" style='left:0;'>
+          <input type='text' name='credentials[username]' placeholder='username'>
+          <input type='password' name='credentials[password]' placeholder="password">
+          <input type='password' name='credentials[password]' placeholder="confirm password">
+          <input type="submit" value="Sign Up!">
+        </div>
+      </div>
+
+
+
+
+      <div class="dropdown" style='float:right;'>
+        <button class='changePassword'>ChangePassword</button>
+        <div class="dropdown-content" style='right:0;'>
+          <input type='password' name='credentials[password]' placeholder="oldpassword">
+          <input type='password' name='credentials[password]' placeholder="newpassword">
+          <input type="submit" value="ChangePassword">
+        </div>
+      </div>
+
+
+      <main class='mainContent'>
+        <h1>How are you feeling?</h1>
+        <div class='journalEntry'>
+          <form>
+            <input type='text' name='Title' placeholder="Title">
+            <input type="text" name="Subject" placeholder="Subject">
+          </form>
+          <textarea id='toType'></textarea>
+          <button id='saveButton'>save</button>
+          </div>
+        </main>
+
+
+      </body>
+
+  </html>
