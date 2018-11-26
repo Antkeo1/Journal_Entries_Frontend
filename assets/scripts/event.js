@@ -38,6 +38,18 @@ const onSignOut = event => {
     .catch(ui.signOutFailure)
 }
 
+const onCreateJournal = function (event) {
+  // ...
+  // event.preventDefault
+
+  // TODO
+  // save response from server in ui.handleSuccessfulCreate
+  // put the game object in store
+  api.createJournal()
+    .then(console.log) // ui.handleSuccessfulCreate
+    .catch(console.error)
+}
+
 const onSaveJournal = function (event) {
   event.preventDefault()
   // think of putting in whatever logic
@@ -53,7 +65,7 @@ const onSaveJournal = function (event) {
     over: false
   }
   console.log(data)
-  api.patchMove(data)
+  api.saveJournal(data)
     .then((responseData) => {
       console.log(responseData.journals.cells)
     })
@@ -65,6 +77,6 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  onCreateGameClick,
+  onCreateJournal,
   onSaveJournal
 }

@@ -67,6 +67,14 @@ const signOutFailure = error => {
   alert('Sign Out unsuccessful')
 }
 
+const saveJournalSuccess = data => {
+  store.user = data.user
+  $('#message').text('Saved Journal successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  console.log('saveJournalSuccess ran. Data is :', data)
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -75,5 +83,6 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  saveJournalSuccess
 }

@@ -1,26 +1,24 @@
 @import '~bootstrap/scss/bootstrap';
 
-.toType {
+.totype {
   height: 300px;
-  width: 55%;
+  width: 45%;
+  float: center;
 }
 
 h1 {
   text-align: center;
 }
 
-.saveButton {
+.savebutton {
   display: block;
   height: 25px;
   width: 40px;
 }
 
-.saveForm {
-  display: hidden;
-}
-
 .journalEntry {
-  margin-left: 370px;
+  display: block;
+  float: center;
 }
 
 * {
