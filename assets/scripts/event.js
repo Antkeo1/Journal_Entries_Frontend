@@ -7,8 +7,6 @@ const ui = require('./ui.js')
 const onSignUp = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // take this data and send it to our server
-  // using an HTTP request (POST)
   api.signUp(data)
     .then(ui.signUpSuccess) // if your request was succesful
     .catch(ui.signUpFailure) // if your request failed
@@ -17,6 +15,7 @@ const onSignUp = event => {
 const onSignIn = event => {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.signIn(data)
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
@@ -39,37 +38,28 @@ const onSignOut = event => {
 }
 
 const onCreateJournal = function (event) {
-  // ...
-  // event.preventDefault
-
-  // TODO
-  // save response from server in ui.handleSuccessfulCreate
-  // put the game object in store
-  api.createJournal()
-    .then(console.log) // ui.handleSuccessfulCreate
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  console.log(data)
+  api.createJournal(data)
+    .then(ui.createJournalSuccess) // ui.handleSuccessfulCreate
     .catch(console.error)
 }
 
-const onSaveJournal = function (event) {
+const onViewJournal = function (event) {
   event.preventDefault()
-  // think of putting in whatever logic
-  // gets your move data here instead
-  const cellData = getFormFields(event.target)
-  const data = {
-    journals: {
-      cell: {
-        index: cellData.cell.index,
-        value: cellData.cell.value
-      }
-    },
-    over: false
-  }
-  console.log(data)
-  api.saveJournal(data)
-    .then((responseData) => {
-      console.log(responseData.journals.cells)
-    })
-    .catch(console.err)
+  const data = getFormFields(event.target)
+  api.viewJournal(data)
+    .then(console.log)
+    .catch(console.error)
+}
+
+const onEditJournal = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.editJournal(data)
+    .then(console.log)
+    .catch(console.error)
 }
 
 module.exports = {
@@ -78,5 +68,6 @@ module.exports = {
   onChangePassword,
   onSignOut,
   onCreateJournal,
-  onSaveJournal
+  onViewJournal,
+  onEditJournal
 }

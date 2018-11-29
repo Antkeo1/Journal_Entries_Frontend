@@ -14,11 +14,12 @@
 
     </head>
     <body>
+      <!-- Button trigger modal -->
       <div class="header">
         <h1>yourEnTrees.com</h1>
         <p>Planting seeds in the mind. Grow your EnTrees</p>
       </div>
-      <form id='sign-in'>
+      <form id='sign-in' class='border2'>
       <div class="dropdown" style='float:left;'>
         <button class='signIn'>SignIn</button>
         <div class="dropdown-content" style='left:0;'>
@@ -29,20 +30,48 @@
       </div>
     </form>
 
-      <form id='sign-out'>
+      <form id='sign-out' class='border3'>
       <div class="dropdown" style='float:left;'>
         <button class='signOut'>SignOut</button>
       </div>
     </form>
 
-      <form id='saved-journals'>
+    <form id='saved-journals'>
+    <!-- Modal button -->
+    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+      Saved Entrees
+    </button>
+
+    <!-- Modal -->
+    <div style='float:right;' class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">My Entrees</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="savedJournalContent">
+            ...
+          </div>
+          <div class="savedJournalFooter">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </form>
+
+      <!--<form id='saved-journals'>
       <div class="dropdown" style='float:right;'>
         <button class='savedJournals'>Saved Entries</button>
       </div>
-    </form>
+    </form>-->
 
 
-      <form id='sign-up'>
+    <form id='sign-up' class='border'>
       <div class="dropdown" style='float:left;'>
         <button class='signUp'>SignUp</button>
         <div class="dropdown-content" style='left:0;'>
@@ -56,29 +85,43 @@
 
 
 
-      <form id='change-password'>
+      <form id='change-password' class='border4'>
       <div class="dropdown" style='float:right;'>
         <button class='changePassword'>ChangePassword</button>
         <div class="dropdown-content" style='right:0;'>
-          <input type='password' name='credentials[password]' placeholder="oldpassword">
-          <input type='password' name='credentials[password]' placeholder="newpassword">
+          <input type='password' name='passwords[old]' placeholder="oldpassword">
+          <input type='password' name='passwords[new]' placeholder="newpassword">
+          <input type='password' name='passwords[confirm_new]' placeholder="confirm newpassword">
           <input type="submit" value="ChangePassword">
         </div>
       </div>
     </form>
 
-
+    <main>
+        <h1 class='greeting'>Welcome!</h1>
         <form class='mainContent'>
-          <h1>How are you feeling?</h1>
           <div class='journalEntry'>
-            <input type='text' name='Title' placeholder="Title">
-            <input type="text" name="Subject" placeholder="Subject">
-            <textarea class='totype'></textarea>
-            <button class='savebutton'>save</button>
+            <h1>How are you feeling?</h1>
+            <input type='text' name='journal[title]' placeholder="Title">
+            <input type="text" name="journal[subject]" placeholder="Subject">
+            <textarea type='text' name='journal[text]' class='totype'></textarea>
+            <input type='submit' value="Save">
           </div>
         </form>
+    </main>
 
-
+        <div id='results'></div>
       </body>
+      <footer class="clearfix">
+            <p class="copyright">
+                Copyright 2018
+            </p>
+            <p class="message">
+                Created by <span class="name">Antonio Keo</span>
+                <a href= 'https://github.com/Antkeo1'>www.github.com/Antkeo1</a>
+            </p>
+
+        </footer>
+        <hr>
 
   </html>

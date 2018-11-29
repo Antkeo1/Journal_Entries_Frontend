@@ -40,17 +40,28 @@ const signOut = () => {
   })
 }
 
-const createJournal = function () {
+const createJournal = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/journals',
+    url: config.apiUrl + '/journals/',
     method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
+const viewJournal = function () {
+  return $.ajax({
+    url: config.apiUrl + '/journals/',
+    method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
-const saveJournal = data => {
+const editJournal = data => {
   return $.ajax({
     url: config.apiUrl + '/journals/:id',
     method: 'PATCH',
@@ -67,5 +78,6 @@ module.exports = {
   changePassword,
   signOut,
   createJournal,
-  saveJournal
+  viewJournal,
+  editJournal
 }

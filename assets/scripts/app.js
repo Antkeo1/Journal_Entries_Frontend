@@ -8,5 +8,6 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('.savebutton').on('submit', authEvents.onSaveJournal)
+  $('.mainContent').on('submit', authEvents.onCreateJournal)
+  $('#saved-journals').on('submit', authEvents.onViewJournal)
 })
