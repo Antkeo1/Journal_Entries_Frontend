@@ -32,15 +32,16 @@
     </form>
 
     <form id='sign-out' class='border3'>
-      <div class="dropdown" style='float:right;'>
+      <div class="dropdown" style='float:left;'>
         <button class='signOut'>SignOut</button>
       </div>
     </form>
 
     <form id='saved-journals'>
-      <div class="dropdown" style='float:left;'>
+      <div class="dropdown" style='float:right;'>
         <button type='submit' class='savedJournals'>Saved Entries</button>
         <div class="dropdown-content" style='right:0;'>
+          <p id='savedJournalsContent'></p>
         </div>
       </div>
     </form>
@@ -74,7 +75,7 @@
         <h1 class='greeting2'>Congrats! Sign In To Get Started</h1>
         <form class='mainContent'>
           <div class='journalEntry'>
-            <h1>How are you feeling?</h1>
+            <h1 class='greeting3'>How are you feeling?</h1>
             <input type='text' name='journal[title]' placeholder="Title">
             <input type="text" name="journal[subject]" placeholder="Subject">
             <textarea type='text' name='journal[text]' class='totype'></textarea>

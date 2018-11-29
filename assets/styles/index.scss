@@ -2,8 +2,7 @@
 
 .totype {
   height: 300px;
-  width: 45%;
-  float: center;
+  width: 80%;
 }
 
 h1 {
@@ -21,8 +20,9 @@ h1 {
 }
 
 .journalEntry {
-  display: block;
+  display: inline-block;
   float: center;
+  margin-left: 300px;
 }
 
 footer {

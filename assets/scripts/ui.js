@@ -95,6 +95,7 @@ const createJournalSuccess = data => {
   $('#message').text('Saved Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.mainContent').trigger('reset')
   console.log(data)
   console.log('saveJournalSuccess ran. Data is :', data)
 }
@@ -104,7 +105,17 @@ const viewJournalSuccess = data => {
   $('#message').text('Saved Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('.savedJournals').html('')
+  // to display my saved entries
+  data.journals.forEach(journal => {
+    const journalHtml = (`
+      <h3>${journal.title}</h3>
+      <h5>${journal.subject}</h5>
+      <p>${journal.text}</p>
+      <button>Edit</button>
+      <button>Delete</button>
+      `)
+    $('#savedJournalsContent').append(journalHtml)
+  })
 
   console.log(data)
   console.log('saveJournalSuccess ran. Data is :', data)
