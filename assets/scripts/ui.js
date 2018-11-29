@@ -4,6 +4,8 @@ const store = require('./store.js')
 $('.journalEntry').hide()
 $('.savedJournals').hide()
 $('.border3').hide()
+$('.greeting2').hide()
+$('.border4').hide()
 
 const signUpSuccess = data => {
   store.user = data.user
@@ -11,10 +13,9 @@ const signUpSuccess = data => {
   $('#message').removeClass()
   $('#message').addClass('success')
   $('.greeting').hide()
-  $('.border, .border2').hide()
-  $('.border3, .border4').show()
-  $('h2').text('Sign In Success').show()
-  $('.journalEntry').show()
+  $('.border, .border4 .border3 .border2').hide()
+  $('h2').text('Sign Up Success').show()
+  $('.greeting2').show()
   console.log('signUpSuccess ran. Data is :', data)
 }
 
@@ -31,7 +32,7 @@ const signInSuccess = data => {
   $('#message').text('Signed in successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('.greeting').hide()
+  $('.greeting, .greeting2').hide()
   $('.savedJournals').show()
   $('.border, .border2').hide()
   $('.border3, .border4').show()
@@ -73,6 +74,7 @@ const signOutSuccess = data => {
   $('.border, .border2').show()
   $('.border3, .border4').hide()
   $('.journalEntry').hide()
+  $('#saved-journals').hide()
   console.log('signOutSuccess ran. Data is :', data)
 }
 
@@ -98,6 +100,8 @@ const viewJournalSuccess = data => {
   $('#message').text('Saved Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('.savedJournals').html('')
+
   console.log(data)
   console.log('saveJournalSuccess ran. Data is :', data)
 }

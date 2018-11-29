@@ -19,7 +19,8 @@
         <h1>yourEnTrees.com</h1>
         <p>Planting seeds in the mind. Grow your EnTrees</p>
       </div>
-      <form id='sign-in' class='border2'>
+
+    <form id='sign-in' class='border2'>
       <div class="dropdown" style='float:left;'>
         <button class='signIn'>SignIn</button>
         <div class="dropdown-content" style='left:0;'>
@@ -30,49 +31,22 @@
       </div>
     </form>
 
-      <form id='sign-out' class='border3'>
-      <div class="dropdown" style='float:left;'>
+    <form id='sign-out' class='border3'>
+      <div class="dropdown" style='float:right;'>
         <button class='signOut'>SignOut</button>
       </div>
     </form>
 
     <form id='saved-journals'>
-    <!-- Modal button -->
-    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-      Saved Entrees
-    </button>
-
-    <!-- Modal -->
-    <div style='float:right;' class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalCenterTitle">My Entrees</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="savedJournalContent">
-            ...
-          </div>
-          <div class="savedJournalFooter">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-secondary">Save changes</button>
-          </div>
+      <div class="dropdown" style='float:right;'>
+        <button type='submit' class='savedJournals'>Saved Entries</button>
+        <div class="dropdown-content" style='right:0;'>
         </div>
       </div>
-    </div>
     </form>
 
-      <!--<form id='saved-journals'>
-      <div class="dropdown" style='float:right;'>
-        <button class='savedJournals'>Saved Entries</button>
-      </div>
-    </form>-->
-
-
     <form id='sign-up' class='border'>
-      <div class="dropdown" style='float:left;'>
+      <div class="dropdown" style='float:right;'>
         <button class='signUp'>SignUp</button>
         <div class="dropdown-content" style='left:0;'>
           <input type='text' name='credentials[email]' placeholder='email'>
@@ -83,10 +57,8 @@
       </div>
     </form>
 
-
-
-      <form id='change-password' class='border4'>
-      <div class="dropdown" style='float:right;'>
+    <form id='change-password' class='border4'>
+      <div class="dropdown" style='float:left;'>
         <button class='changePassword'>ChangePassword</button>
         <div class="dropdown-content" style='right:0;'>
           <input type='password' name='passwords[old]' placeholder="oldpassword">
@@ -99,6 +71,7 @@
 
     <main>
         <h1 class='greeting'>Welcome!</h1>
+        <h1 class='greeting2'>Congrats! Sign In To Get Started</h1>
         <form class='mainContent'>
           <div class='journalEntry'>
             <h1>How are you feeling?</h1>

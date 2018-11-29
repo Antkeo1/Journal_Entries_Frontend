@@ -50,7 +50,7 @@ const onViewJournal = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
   api.viewJournal(data)
-    .then(console.log)
+    .then(ui.viewJournalSuccess)
     .catch(console.error)
 }
 
