@@ -39,7 +39,16 @@
 
     <form id='saved-journals'>
       <div class="dropdown" style='float:right;'>
-        <button type='submit' class='savedJournals'>Saved Entries</button>
+        <button type='submit' class='savedJournals'>List of Entries</button>
+        <div class="dropdown-content" style='right:0;'>
+          <p id='savedJournalsContent'></p>
+        </div>
+      </div>
+    </form>
+
+    <form id='viewJournal'>
+      <div class="dropdown" style='float:right;'>
+        <button type='submit' class='savedJournals'>View One Entry</button>
         <div class="dropdown-content" style='right:0;'>
           <p id='savedJournalsContent'></p>
         </div>
@@ -47,7 +56,7 @@
     </form>
 
     <form id='sign-up' class='border'>
-      <div class="dropdown" style='float:right;'>
+      <div class="dropdown" style='float:left;'>
         <button class='signUp'>SignUp</button>
         <div class="dropdown-content" style='left:0;'>
           <input type='text' name='credentials[email]' placeholder='email'>

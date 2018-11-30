@@ -107,18 +107,32 @@ const viewJournalSuccess = data => {
   $('#message').addClass('success')
   // to display my saved entries
   data.journals.forEach(journal => {
-    const journalHtml = (`
-      <h3>${journal.title}</h3>
+    const journalsHtml = (`
+      <h5>${journal.title}</h5>
       <h5>${journal.subject}</h5>
       <p>${journal.text}</p>
       <button>Edit</button>
       <button>Delete</button>
       `)
-    $('#savedJournalsContent').append(journalHtml)
+    $('#savedJournalsContent').append(journalsHtml)
   })
 
   console.log(data)
   console.log('saveJournalSuccess ran. Data is :', data)
+}
+
+const onViewOneJournalSuccess = data => {
+  store.user = data.user
+  const journalHTML = (`
+    <h4>Title: ${data.journal.title}</h4>
+    <p>Subject: ${data.journal.subject}</p>
+    <br>
+  `)
+
+  $('#savedJournalsContent').html(journalHTML)
+
+  // reset form
+  // $('#books-show').trigger('reset')
 }
 
 const editJournalSuccess = data => {
@@ -126,6 +140,9 @@ const editJournalSuccess = data => {
   $('#message').text('Edit Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
+  $('#savedJournalsContent').html('You successfully updated the book')
+  // reset form
+  $('#editJournal').trigger('reset')
   console.log('editJournalSuccess ran. Data is :', data)
 }
 
@@ -140,5 +157,6 @@ module.exports = {
   signOutFailure,
   createJournalSuccess,
   editJournalSuccess,
-  viewJournalSuccess
+  viewJournalSuccess,
+  onViewOneJournalSuccess
 }

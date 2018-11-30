@@ -61,6 +61,16 @@ const viewJournal = function () {
   })
 }
 
+const viewOneJournal = function (data) {
+  return $.ajax({
+    url: config.apiUrl + 'journals/:id',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const editJournal = data => {
   return $.ajax({
     url: config.apiUrl + '/journals/:id',
@@ -79,5 +89,6 @@ module.exports = {
   signOut,
   createJournal,
   viewJournal,
-  editJournal
+  editJournal,
+  viewOneJournal
 }

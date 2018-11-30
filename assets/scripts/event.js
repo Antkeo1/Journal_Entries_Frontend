@@ -54,6 +54,18 @@ const onViewJournal = function (event) {
     .catch(console.error)
 }
 
+const onViewOneJournal = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  if (data.book.title === '') {
+    $('#content').html('<p>ID is required</p>')
+  } else {
+    api.viewOneJournal(data)
+      .then(ui.ViewOneJournalSuccess)
+      .catch(ui.Error)
+  }
+}
+
 const onEditJournal = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -69,5 +81,6 @@ module.exports = {
   onSignOut,
   onCreateJournal,
   onViewJournal,
-  onEditJournal
+  onEditJournal,
+  onViewOneJournal
 }
