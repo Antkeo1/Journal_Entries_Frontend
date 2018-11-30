@@ -58,7 +58,6 @@ const changePasswordSuccess = data => {
   $('#change-password').trigger('reset')
   $('#saved-journals').show()
   console.log('changePasswordSuccess ran. Data is :', data)
-  alert('Password Change successful')
 }
 
 const changePasswordFailure = error => {
@@ -87,7 +86,6 @@ const signOutFailure = error => {
   $('#message').removeClass()
   $('#message').addClass('failure')
   console.error('signOutFailure ran. Error is :', error)
-  alert('Sign Out unsuccessful')
 }
 
 const createJournalSuccess = data => {
