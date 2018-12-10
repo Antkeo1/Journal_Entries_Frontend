@@ -3,6 +3,7 @@
 const store = require('./store.js')
 $('.journalEntry').hide()
 $('.savedJournals').hide()
+$('.savedJournal').hide()
 $('.border3').hide()
 $('.greeting2').hide()
 $('.border4').hide()
@@ -35,7 +36,7 @@ const signInSuccess = data => {
   $('#message').addClass('success')
   $('#sign-in').trigger('reset')
   $('.greeting, .greeting2').hide()
-  $('.savedJournals').show()
+  $('.savedJournals, .savedJournal').show()
   $('.border, .border2').hide()
   $('.border3, .border4').show()
   $('h2').text('Sign In Success').show()
@@ -75,7 +76,7 @@ const signOutSuccess = data => {
   $('#message').addClass('success')
   $('.greeting').show()
   $('.border, .border2').show()
-  $('.border3, .border4').hide()
+  $('.border3, .border4, #viewOneJournal').hide()
   $('.journalEntry').hide()
   $('#saved-journals').hide()
   console.log('signOutSuccess ran. Data is :', data)
@@ -89,7 +90,7 @@ const signOutFailure = error => {
 }
 
 const createJournalSuccess = data => {
-  store.user = data.user
+  // store.user = data.user
   $('#message').text('Saved Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -99,8 +100,7 @@ const createJournalSuccess = data => {
 }
 
 const viewJournalSuccess = data => {
-  store.user = data.user
-  $('#message').text('Saved Journal successfully')
+  $('#message').text('Viewed Journals successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
   // to display my saved entries
@@ -109,32 +109,33 @@ const viewJournalSuccess = data => {
       <h5>${journal.title}</h5>
       <h5>${journal.subject}</h5>
       <p>${journal.text}</p>
-      <button>Edit</button>
-      <button>Delete</button>
+      <hr>
       `)
     $('#savedJournalsContent').append(journalsHtml)
   })
-
-  console.log(data)
   console.log('saveJournalSuccess ran. Data is :', data)
 }
 
-const onViewOneJournalSuccess = data => {
-  store.user = data.user
-  const journalHTML = (`
-    <h4>Title: ${data.journal.title}</h4>
-    <p>Subject: ${data.journal.subject}</p>
-    <br>
-  `)
+const viewOneJournalSuccess = function (response) {
+  console.log(response)
+  const journalsHTML = (`
+    <hr>
+    <h5>${response.journal.title}</h5>
+    <h5>${response.journal.subject}</h5>
+    <p>${response.journal.text}</p>
+    <hr>
+    `)
+  $('#viewJournalsContent').append(journalsHTML)
+  $('#viewOneJournal').trigger('reset')
 
-  $('#savedJournalsContent').html(journalHTML)
+  // console.log('viewOneJournalSuccess ran. Data is :', data)
 
   // reset form
   // $('#books-show').trigger('reset')
 }
 
 const editJournalSuccess = data => {
-  store.user = data.user
+  // store.user = data.user
   $('#message').text('Edit Journal successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
@@ -142,6 +143,13 @@ const editJournalSuccess = data => {
   // reset form
   $('#editJournal').trigger('reset')
   console.log('editJournalSuccess ran. Data is :', data)
+  const journalHTML = (`
+    <h4>Title: ${data.journal.title}</h4>
+    <p>Subject: ${data.journal.subject}</p>
+    <hr>
+  `)
+
+  $('#editJournalsContent').html(journalHTML)
 }
 
 module.exports = {
@@ -156,5 +164,5 @@ module.exports = {
   createJournalSuccess,
   editJournalSuccess,
   viewJournalSuccess,
-  onViewOneJournalSuccess
+  viewOneJournalSuccess
 }

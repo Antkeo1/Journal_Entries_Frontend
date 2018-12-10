@@ -57,21 +57,20 @@ const onViewJournal = function (event) {
 const onViewOneJournal = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  if (data.book.title === '') {
-    $('#content').html('<p>ID is required</p>')
-  } else {
-    api.viewOneJournal(data)
-      .then(ui.ViewOneJournalSuccess)
-      .catch(ui.Error)
-  }
+  console.log(data)
+  api.viewOneJournal(data)
+    .then(ui.viewOneJournalSuccess)
+    .catch(ui.Error)
+  // }
 }
 
 const onEditJournal = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  console.log(data)
   api.editJournal(data)
-    .then(console.log)
-    .catch(console.error)
+    .then(ui.editJournalSuccess)
+    .catch(ui.error)
 }
 
 module.exports = {

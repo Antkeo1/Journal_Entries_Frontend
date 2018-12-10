@@ -62,8 +62,9 @@ const viewJournal = function () {
 }
 
 const viewOneJournal = function (data) {
+  console.log(data.journal.title)
   return $.ajax({
-    url: config.apiUrl + 'journals/:id',
+    url: config.apiUrl + '/journals/' + data.journal.title,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -73,7 +74,7 @@ const viewOneJournal = function (data) {
 
 const editJournal = data => {
   return $.ajax({
-    url: config.apiUrl + '/journals/:id',
+    url: config.apiUrl + '/journals/' + data.journal.title,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token

@@ -15,12 +15,12 @@
     </head>
     <body>
       <!-- Button trigger modal -->
-      <div class="header">
+      <div class="header container">
         <h1>yourEnTrees.com</h1>
         <p>Planting seeds in the mind. Grow your EnTrees</p>
       </div>
 
-    <form id='sign-in' class='border2'>
+    <form id='sign-in' class='border2 container'>
       <div class="dropdown" style='float:left;'>
         <button class='signIn'>SignIn</button>
         <div class="dropdown-content" style='left:0;'>
@@ -31,13 +31,13 @@
       </div>
     </form>
 
-    <form id='sign-out' class='border3'>
+    <form id='sign-out' class='border3 container'>
       <div class="dropdown" style='float:left;'>
         <button class='signOut'>SignOut</button>
       </div>
     </form>
 
-    <form id='saved-journals'>
+    <form id='saved-journals' class='container'>
       <div class="dropdown" style='float:right;'>
         <button type='submit' class='savedJournals'>List of Entries</button>
         <div class="dropdown-content" style='right:0;'>
@@ -46,16 +46,29 @@
       </div>
     </form>
 
-    <form id='viewJournal'>
+    <form id='viewOneJournal' class='container'>
       <div class="dropdown" style='float:right;'>
-        <button type='submit' class='savedJournals'>View One Entry</button>
+        <button class='savedJournal'>View One Entry</button>
         <div class="dropdown-content" style='right:0;'>
-          <p id='savedJournalsContent'></p>
+          <input type='text' name='journal[title]' placeholder="Title">
+          <input type='submit' value="View">
+          <p id='viewJournalsContent'></p>
         </div>
       </div>
     </form>
 
-    <form id='sign-up' class='border'>
+    <!--<form id='editOneJournal' class='container'>
+      <div class="dropdown" style='float:right;'>
+        <button class='savedJournals'>Edit One Entry</button>
+        <div class="dropdown-content" style='right:0;'>
+          <input type='text' name='journal[title]' placeholder="Title">
+          <input type='submit' value="Edit">
+          <p id='editJournalsContent'></p>
+        </div>
+      </div>
+    </form>-->
+
+    <form id='sign-up' class='border container'>
       <div class="dropdown" style='float:left;'>
         <button class='signUp'>SignUp</button>
         <div class="dropdown-content" style='left:0;'>
@@ -67,7 +80,7 @@
       </div>
     </form>
 
-    <form id='change-password' class='border4'>
+    <form id='change-password' class='border4 container'>
       <div class="dropdown" style='float:left;'>
         <button class='changePassword'>ChangePassword</button>
         <div class="dropdown-content" style='right:0;'>
@@ -79,11 +92,11 @@
       </div>
     </form>
 
-    <main>
-        <h1 class='greeting'>Welcome!</h1>
-        <h1 class='greeting2'>Congrats! Sign In To Get Started</h1>
+    <main class='text-center'>
         <form class='mainContent'>
-          <div class='journalEntry'>
+          <h1 class='greeting'>Welcome!</h1>
+          <div class='journalEntry container'>
+            <h1 class='greeting2'>Congrats! Sign In To Get Started</h1>
             <h1 class='greeting3'>How are you feeling?</h1>
             <input type='text' name='journal[title]' placeholder="Title">
             <input type="text" name="journal[subject]" placeholder="Subject">

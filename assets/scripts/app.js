@@ -10,5 +10,6 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('.mainContent').on('submit', authEvents.onCreateJournal)
   $('#saved-journals').on('submit', authEvents.onViewJournal)
-  $('#viewJournal').on('submit', authEvents.onViewOneJournal)
+  $('#viewOneJournal').on('submit', authEvents.onViewOneJournal)
+  $('#editOneJournal').on('submit', authEvents.onEditJournal)
 })
