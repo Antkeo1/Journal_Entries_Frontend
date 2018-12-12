@@ -116,13 +116,14 @@ const viewJournalSuccess = data => {
   console.log('saveJournalSuccess ran. Data is :', data)
 }
 
-const viewOneJournalSuccess = function (response) {
-  console.log(response)
+const viewOneJournalSuccess = data => {
+  console.log(data.journal)
+  const journal = data.journal
   const journalsHTML = (`
     <hr>
-    <h5>${response.journal.title}</h5>
-    <h5>${response.journal.subject}</h5>
-    <p>${response.journal.text}</p>
+    <h5>${journal.title}</h5>
+    <h5>${journal.subject}</h5>
+    <p>${journal.text}</p>
     <hr>
     `)
   $('#viewJournalsContent').append(journalsHTML)

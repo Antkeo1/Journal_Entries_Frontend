@@ -62,9 +62,10 @@ const viewJournal = function () {
 }
 
 const viewOneJournal = function (data) {
+  console.log('viewOneJournal', data)
   console.log(data.journal.title)
   return $.ajax({
-    url: config.apiUrl + '/journals/' + data.journal.title,
+    url: config.apiUrl + '/show-journal/' + `${data.journal.title}`,
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
